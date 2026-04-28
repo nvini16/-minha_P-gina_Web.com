@@ -10,7 +10,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
       setTimeout(() => {
         loading.style.display = "none";
+
+        // ===== ALERT (primeira visita)
+        if (!localStorage.getItem("visitou")) {
+          mostrarAlerta("Pagina em desenvolvimento guys!");
+          localStorage.setItem("visitou", "true");
+        }
+
       }, 500);
+
     }, 1200);
   }
 
@@ -34,19 +42,19 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
-  // ===== ALERT-TRIGGER (SISTEMA PRINCIPAL)
+  // ===== ALERT-TRIGGER SYSTEM
   document.querySelectorAll(".alert-trigger").forEach(el => {
     el.addEventListener("click", (e) => {
 
-      // se for link, segura a navegação
+      // bloqueia navegação padrão se for link
       if (el.tagName === "A") {
         e.preventDefault();
       }
 
-      // mostra mensagem do HTML
-      mostrarAlerta(el.dataset.msg || "Ação executada 👀");
+      // mostra alerta
+      mostrarAlerta(el.dataset.msg || "Ação executada no proceder");
 
-      // se for link, redireciona depois
+      // redireciona depois se for link
       if (el.tagName === "A" && el.href) {
         setTimeout(() => {
           window.location.href = el.href;
@@ -59,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-// ===== TOAST (ALERT)
+// ===== TOAST (ALERT SYSTEM)
 function mostrarAlerta(msg) {
   const container = document.getElementById("toast-container");
   if (!container) return;
@@ -81,4 +89,4 @@ function mostrarAlerta(msg) {
       toast.remove();
     }, 300);
   }, 3000);
-                }
+}
