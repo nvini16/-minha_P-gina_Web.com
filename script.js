@@ -5,9 +5,8 @@ window.onload = () => {
 
 // FRASES DINÂMICAS
 const frases = [
-  "A vida é um pacote completo.",
-  "Dor e alegria caminham juntas.",
-  "Tudo que você sente tem um propósito."
+  "A vida é um pacote completo. Se você sente dor também pode sentir alegria.",
+  "Imaturo é o homem que culpa outros por suas dores."
 ];
 
 let i = 0;
