@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,13 +9,17 @@
 <body>
 
 <!-- LOADING -->
-<div id="loading">
+  <div id="loading">
   <div class="loader"></div>
-</div>
+  </div>
+  
+
+  <!-- alert -->
+<div id="toast-container"></div>
 
 <header>
   <div class="header-top">
-    <img src="sua-foto.jpg" class="logo">
+    <img src="https://kommodo.ai/i/Hj3lygMj11thpaeEPXUN" alt="Foto de perfil" class="logo">
     <h1>Nathanael</h1>
 
     <nav>
@@ -25,51 +29,58 @@
     </nav>
   </div>
 
-  <p id="frase"></p>
+  <p class="alert-trigger" data-msg="Por que você clicou numa frase?" id="frase"></p>
 </header>
 
-<!-- ALERTS -->
-<div class="alert" id="alerta">Página em desenvolvimento guys!</div>
+
 
 <main>
 
-<!-- INSTAGRAM -->
-<section id="instagram" class="box">
-  <h2>Instagram</h2>
+  <!-- INSTAGRAM -->
+  <section id="instagram" class="box">
+    <h2>Instagram</h2>
 
-  <div class="destaques">
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-  </div>
+    <div class="destaques">
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+    </div>
 
-  <p class="bio">🎲"O deserto te ensina mais sobre a água do que o ocenao jamais poderia".🎲</p>
+    <p class="bio">🎲 "O deserto te ensina mais sobre a água do que o oceano jamais poderia". 🎲</p>
 
-  <button>Seguir</button>
-</section>
+    <a href="https://instagram.com" class="btn alert-trigger" data-msg="Indo pro Insta pae!">
+  Seguir
+    </a>
+  </section>
 
-<!-- TIKTOK -->
-<section id="tiktok" class="box">
-  <h2>TikTok</h2>
+  <!-- TIKTOK -->
+  <section id="tiktok" class="box">
+    <h2>TikTok</h2>
 
-  <div class="video-destaque">Vídeo destaque</div>
+    <div class="video-destaque">Vídeo destaque</div>
 
-  <div class="carrossel">
-    <div class="post">Post 1</div>
-    <div class="post">Post 2</div>
-    <div class="post">Post 3</div>
-  </div>
+    <div class="carrossel">
+      <div class="post">Post 1</div>
+      <div class="post">Post 2</div>
+      <div class="post">Post 3</div>
+    </div>
 
-  <button>Seguir</button>
-</section>
+    <a href="https://instagram.com" class="btn alert-trigger" data-msg="Indo pro TikTok fiote!">
+  Seguir
+    </a>
 
 </main>
 
-<!-- AUDIO -->
-<audio autoplay loop>
+<!-- ÁUDIO (pode ser bloqueado pelo navegador sem interação) -->
+<audio id="bg-audio" loop>
   <source src="musica.mp3" type="audio/mpeg">
 </audio>
 
+ <!--<a href="https://instagram.com" class="btn alert-trigger" data-msg="Indo pro Insta pae!">
+  Seguir
+</a>-->
+
 <script src="script.js"></script>
+
 </body>
 </html>
