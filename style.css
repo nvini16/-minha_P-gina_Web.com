@@ -205,6 +205,7 @@ nav a {
   width: 70px;
   height: 70px;
   border-radius: 50%;
+  border: 2px solid var(--verde-claro);
   overflow: hidden; /* importante pra imagem */
   cursor: pointer;
   position: relative;
