@@ -196,67 +196,80 @@ nav a {
 /* STORIES */
 .stories {
   display: flex;
-  gap: 10px;
+  gap: 12px;
   justify-content: center;
 }
 
+/* STORY */
 .story {
   width: 70px;
   height: 70px;
   border-radius: 50%;
-  background: #0b5d2a;
+  overflow: hidden; /* importante pra imagem */
   cursor: pointer;
-  transition: 0.3s;
+  position: relative;
+  transition: transform 0.3s;
 }
 
+/* IMAGEM DENTRO DO STORY */
+.story img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* HOVER */
 .story:hover {
-  transform: scale(1.1);
+  transform: scale(1.08);
 }
 
-/* procedimento do story*/
+/* EFEITO NEON */
+.story::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  box-shadow: 0 0 12px #26F5F5;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.story:hover::after {
+  opacity: 1;
+}
+
+/* VIEWER (TELA CHEIA) */
 #story-viewer {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: black;
+  background: rgba(0, 0, 0, 0.95); /* mais suave que preto puro */
   display: none;
   justify-content: center;
   align-items: center;
   z-index: 999;
 }
 
+/* VÍDEO */
 #story-video {
   width: 90%;
   max-width: 400px;
-  border-radius: 10px;
+  border-radius: 12px;
 }
 
+/* BOTÃO FECHAR */
 #fechar {
   position: absolute;
   top: 20px;
   right: 20px;
-  font-size: 30px;
+  font-size: 32px;
   color: white;
   cursor: pointer;
-}
-
-
-.story {
-  position: relative;
-}
-
-.story::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 50%;
-  box-shadow: 0 0 10px #26F5F5;
-  opacity: 0;
   transition: 0.3s;
 }
 
-.story:hover::after {
-  opacity: 1;
-}
+#fechar:hover {
+  transform: scale(1.2);
+  }
