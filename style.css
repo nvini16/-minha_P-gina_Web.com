@@ -241,3 +241,22 @@ nav a {
   color: white;
   cursor: pointer;
 }
+
+
+.story {
+  position: relative;
+}
+
+.story::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #26F5F5;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.story:hover::after {
+  opacity: 1;
+}
