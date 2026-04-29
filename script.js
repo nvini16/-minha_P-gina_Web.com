@@ -90,3 +90,24 @@ function mostrarAlerta(msg) {
     }, 300);
   }, 3000);
 }
+
+// magia negra so que no script 
+const stories = document.querySelectorAll(".story");
+const viewer = document.getElementById("story-viewer");
+const video = document.getElementById("story-video");
+const fechar = document.getElementById("fechar");
+
+stories.forEach(story => {
+  story.addEventListener("click", () => {
+    const src = story.getAttribute("data-video");
+    video.src = src;
+    viewer.style.display = "flex";
+    video.play();
+  });
+});
+
+fechar.addEventListener("click", () => {
+  viewer.style.display = "none";
+  video.pause();
+  video.currentTime = 0;
+});
