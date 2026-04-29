@@ -192,3 +192,52 @@ nav a {
     gap: 10px;
   }
 }
+
+/* STORIES */
+.stories {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.story {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: #0b5d2a;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.story:hover {
+  transform: scale(1.1);
+}
+
+/* procedimento do story*/
+#story-viewer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+#story-video {
+  width: 90%;
+  max-width: 400px;
+  border-radius: 10px;
+}
+
+#fechar {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+}
