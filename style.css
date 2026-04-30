@@ -104,11 +104,45 @@ nav a {
   margin: 15px 0;
 }
 
-/* TIKTOK */
-.video-destaque {
-  height: 150px;
-  background: #222;
-  margin-bottom: 15px;
+/* VÍDEO DESTAQUE */
+.video-destaque video {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* CARROSSEL */
+.carrossel2 {
+  display: flex;
+  overflow-x: auto;
+  gap: 10px;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 10px;
+}
+
+/* POST */
+.post {
+  min-width: 150px;
+  height: 200px;
+  border-radius: 10px;
+  overflow: hidden;
+  scroll-snap-align: center;
+  cursor: pointer;
+  position: relative;
+}
+
+/* VÍDEO DOS POSTS */
+.post video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* HOVER */
+.post:hover {
+  transform: scale(1.05);
+  transition: 0.3s;
 }
 
 /* CARROSSEL */
