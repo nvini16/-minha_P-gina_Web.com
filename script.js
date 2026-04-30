@@ -11,7 +11,6 @@ document.addEventListener("DOMContentLoaded", () => {
       setTimeout(() => {
         loading.style.display = "none";
 
-        // ===== ALERT (primeira visita)
         if (!localStorage.getItem("visitou")) {
           mostrarAlerta("Pagina em desenvolvimento guys!");
           localStorage.setItem("visitou", "true");
@@ -21,7 +20,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }, 1200);
   }
-
 
   // ===== FRASES DINÂMICAS
   const frases = [
@@ -41,20 +39,16 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 3000);
   }
 
-
   // ===== ALERT-TRIGGER SYSTEM
   document.querySelectorAll(".alert-trigger").forEach(el => {
     el.addEventListener("click", (e) => {
 
-      // bloqueia navegação padrão se for link
       if (el.tagName === "A") {
         e.preventDefault();
       }
 
-      // mostra alerta
       mostrarAlerta(el.dataset.msg || "Ação executada no proceder");
 
-      // redireciona depois se for link
       if (el.tagName === "A" && el.href) {
         setTimeout(() => {
           window.location.href = el.href;
@@ -63,6 +57,60 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
   });
+
+  // ===== STORIES (INSTAGRAM STYLE)
+  const stories = document.querySelectorAll(".story");
+  const viewer = document.getElementById("story-viewer");
+  const video = document.getElementById("story-video");
+  const fechar = document.getElementById("fechar");
+
+  if (stories.length && viewer && video && fechar) {
+    stories.forEach(story => {
+      story.addEventListener("click", () => {
+        const src = story.getAttribute("data-video");
+        video.src = src;
+        viewer.style.display = "flex";
+        video.play();
+      });
+    });
+
+    fechar.addEventListener("click", () => {
+      viewer.style.display = "none";
+      video.pause();
+      video.currentTime = 0;
+    });
+  }
+
+  // ===== TIKTOK (CARROSSEL FUNCIONAL)
+  const posts = document.querySelectorAll(".post video");
+  const destaque = document.querySelector(".video-destaque video");
+
+  if (posts.length && destaque) {
+
+    // clique troca vídeo destaque
+    posts.forEach(videoEl => {
+      videoEl.addEventListener("click", () => {
+        const src = videoEl.querySelector("source").src;
+        destaque.src = src;
+        destaque.play();
+      });
+    });
+
+    // ===== INTERSECTION OBSERVER (AUTO PLAY INTELIGENTE)
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.play();
+        } else {
+          entry.target.pause();
+        }
+      });
+    });
+
+    posts.forEach(videoEl => {
+      observer.observe(videoEl);
+    });
+  }
 
 });
 
@@ -89,25 +137,4 @@ function mostrarAlerta(msg) {
       toast.remove();
     }, 300);
   }, 3000);
-}
-
-// magia negra so que no script 
-const stories = document.querySelectorAll(".story");
-const viewer = document.getElementById("story-viewer");
-const video = document.getElementById("story-video");
-const fechar = document.getElementById("fechar");
-
-stories.forEach(story => {
-  story.addEventListener("click", () => {
-    const src = story.getAttribute("data-video");
-    video.src = src;
-    viewer.style.display = "flex";
-    video.play();
-  });
-});
-
-fechar.addEventListener("click", () => {
-  viewer.style.display = "none";
-  video.pause();
-  video.currentTime = 0;
-});
+          }
