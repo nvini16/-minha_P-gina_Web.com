@@ -163,6 +163,7 @@ nav a {
 /* BOTÃO */
 .btn{
   padding: 14px 28px;
+  margin: 10px;
   border: none;
   background: var(--verde-claro);
   color: var(--preto);
