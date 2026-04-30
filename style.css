@@ -72,6 +72,9 @@ nav a {
   text-decoration: none;
 }
 
+a:hover{
+  color: var(--verde-claro);
+}
 /* FRASE */
 #frase {
   margin-top: 10px;
