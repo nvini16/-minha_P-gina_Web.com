@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat</title>
+  <link rel="stylesheet" href="chat.css">
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="voltar">← Voltar</a>
+  <h1>Contato</h1>
+</header>
+
+<main class="chat-container">
+
+  <!-- ÁREA DE MENSAGENS -->
+  <div id="mensagens" class="mensagens">
+    
+    <!-- Mensagem inicial (fallback caso JS demore) -->
+    <div class="msg bot">
+     <!-- <p id="loading-msg">Carregando interação...</p>-->
+    </div>
+
+  </div>
+
+  <!-- INPUT -->
+  <div class="input-area">
+    <input 
+      type="text" 
+      id="input" 
+      placeholder="Digite ou clique em uma opção pae"
+      autocomplete="off"
+    >
+
+    <button id="btn-enviar">Enviar</button>
+  </div>
+
+</main>
+
+<!-- SCRIPT -->
+<script src="chat.js"></script>
+
+</body>
+</html>
