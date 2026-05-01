@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (t.includes("sobre")) return gerarRespostaCodigo("sobre");
     if (t.includes("contato") || t.includes("insta")) return gerarRespostaCodigo("contato");
 
-    return `Não peguei isso... tenta clicar em uma opção abaixo ou me chama no Insta:
+    return `Acho que não tamo falando a memsa língua, mn. Tenta clicar em uma opção abaixo ou me chama no Insta:
     <a href="${insta}" target="_blank">@risadinha__3rk7</a>`;
   }
 
@@ -68,8 +68,8 @@ document.addEventListener("DOMContentLoaded", () => {
   function gerarRespostaCodigo(tipo) {
 
     const respostas = {
-      projeto: {
-        texto: "Aqui estão alguns dos meus projetos principais.",
+      projetos:{
+        texto: "Opa, ainda não tenho nenhum projeto pra mostrar!",
         opcoes: ["sobre", "contato"]
       },
       sobre: {
