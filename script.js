@@ -21,10 +21,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 1200);
   }
 
-  // ===== FRASES DINÂMICAS
+  // ===== FRASES 
   const frases = [
     "A vida é um pacote completo. Se você sente dor também pode sentir alegria.",
-    "Imaturo é o homem que culpa outros por suas dores."
+    "Imaturo é o homem que culpa outros por suas dores.",
+    "O deserto te ensina mais sobre a água do que o oceano jamais poderia.",
+    "Mesmo que leve um, dois, dez ou cem anos."
   ];
 
   const fraseEl = document.getElementById("frase");
