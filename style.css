@@ -408,7 +408,7 @@ nav a:hover{
 
   transform-style:preserve-3d;
 
-  animation:rotate3d 20s linear infinite;
+  animation:rotate3d 50s linear infinite;
 }
 
 .container div{
