@@ -26,7 +26,9 @@ document.addEventListener("DOMContentLoaded", () => {
     "A vida é um pacote completo. Se você sente dor também pode sentir alegria.",
     "Imaturo é o homem que culpa outros por suas dores.",
     "O deserto te ensina mais sobre a água do que o oceano jamais poderia.",
-    "Mesmo que leve um, dois, dez ou cem anos."
+    "Mesmo que leve um, dois, dez ou cem anos.",
+    "É no silêncio que as risadas ficam mais altas.",
+    "O oceano é calmo até você afundar alguns metros."
   ];
 
   const fraseEl = document.getElementById("frase");
